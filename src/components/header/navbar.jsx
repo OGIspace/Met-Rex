@@ -1,12 +1,20 @@
 import React, { useState } from "react";
-import "./navbar.css"
-import Logo from "../../img/MR.svg"
+import "./navbar.css";
+import Logo from "../../img/MR.svg";
+import WishList from "../../img/icons8-wish-list-100 1.svg";
+import PersonalPlace from "../../img/icons8-person-96 1.svg";
+import Cart from "../../img/icons8-shopping-cart-96 1.svg"
 
 import Nav from "./stylednav/StyledNav";
+import Nav_container from "./stylednav/Nav_container";
 import Logo_container from "./stylednav/Logo";
 import Text_container from "./stylednav/Text_container";
 import Losung from "./stylednav/Losung";
+import Search_container from "./stylednav/Search_container";
+import Search from "./stylednav/Search";
+import Li from "./stylednav/Styled.li";
 
+import SignINOut from "./stylednav/SingINOut";
 
 function Navbar() {
   const [active, setActive] = useState("nav__menu");
@@ -23,6 +31,7 @@ function Navbar() {
   };
   return (
     <Nav>
+      <Nav_container>
       <Logo_container>
         <img src={Logo}/>
       </Logo_container>
@@ -31,38 +40,35 @@ function Navbar() {
         <Losung>Build</Losung>
         <Losung>Change</Losung>
       </Text_container>
+      
+      <Search_container>
+        <Search placeholder="Пошук товарів та послуг" type="search"/>
+      </Search_container>
       <ul className={active}>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
-            Home
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
-            About
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
-            Portfolio
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
-            Skills
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="#" className="nav__link">
-            Contact
-          </a>
-        </li>
+        <Li>
+          <img src={WishList}/>
+          </Li>
+          <Li>
+          <img src={PersonalPlace}/>
+          </Li>
+          <Li>
+          <img src={Cart}/>
+          </Li>
+          <Li>
+          <SignINOut href="" >Sing In</SignINOut>
+          </Li>
+          
+          <Li>
+          <SignINOut href="" >Sing In</SignINOut>
+          </Li>
       </ul>
       <div onClick={navToggle} className={icon}>
         <div className="line1"></div>
         <div className="line2"></div>
         <div className="line3"></div>
       </div>
+      
+      </Nav_container>
       </Nav>
   );
 }
