@@ -11,7 +11,11 @@ const Search = styled.input`
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 60px;
     ::placeholder{
-        font-size: larger;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        font-size: 22px;
+        padding: 15px;
         font-weight: 500;
     }
 `

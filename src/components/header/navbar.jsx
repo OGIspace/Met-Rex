@@ -42,7 +42,7 @@ function Navbar() {
       </Text_container>
       
       <Search_container>
-        <Search placeholder="Пошук товарів та послуг" type="search"/>
+        <Search placeholder="Пошук товарів та послуг..." type="search"/>
       </Search_container>
       <ul className={active}>
         <Li>
